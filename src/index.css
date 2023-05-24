@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -26,6 +26,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 main {
@@ -36,11 +37,39 @@ main {
   grid-template-rows: 60px 1fr 60px;
 }
 
-header, footer {
+header {
+  background-color: #050801;
+  color: #03e9f4;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
+
+header::before {
+  font-size: 1.5em;
+  position: absolute;
+  left: 10px;
+}
+
+header h1 {
+  font-size: 1.5em;
+  line-height: 1.1;
+  position: relative;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 3px;
+  background-color: #03e9f4;
+}
+
 
 h1 {
   font-size: 1.5em;
@@ -51,32 +80,35 @@ figure {
   width: 48px;
   height: 48px;
   border-radius: 9999px;
-  background-color: white;
+  background-color:#03e8f4e1 ;
+  cursor: pointer;
+}
+button{
+  position: relative;
+  padding: 25px 30px;
+  background-color: #050801;
+  color: #03e9f4;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 4px;
+  overflow: hidden;
+  transition: 0.5s;
   cursor: pointer;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+button:hover{
+    background: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: #050c13bd;
     background-color: #ffffff;
   }
   a:hover {
@@ -85,4 +117,38 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+section {
+  margin-top: 24px;
+}
+
+h2 {
+  margin-bottom: 8px;
+  font-size: 1.2em;
+  color: #03e9f4;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  text-decoration-color: aqua;
+}
+
+th {
+  background-color:#010f10;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color:#010f10;
+}
+p{
+  color: #03e9f4;
+  font-size: 15px;
 }
